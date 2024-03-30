@@ -19,7 +19,7 @@ export default class Panel {
   #buttons;
   #onPriorityRender = false;
   #framesToRender: Frames = [];
-  #frameTicker = 0;
+  #frameTicker: NodeJS.Timeout = 0 as unknown as NodeJS.Timeout;
   constructor() {
     this.#launchpad = new Launchpad();
     this.#buttons = makePanelButtons(this);
@@ -84,7 +84,7 @@ export default class Panel {
   }
   clearFramesToRender() {
     clearTimeout(this.#frameTicker);
-    this.#frameTicker = 0;
+    this.#frameTicker = 0 as unknown as NodeJS.Timeout;
     this.#framesToRender = [];
     this.#onPriorityRender = false;
     this.render();

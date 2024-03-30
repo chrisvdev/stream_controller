@@ -1,0 +1,2 @@
+OBS_WS_URL=ws://domain_or_ip:4455
+OBS_WS_PASSWORD=your_obs_ws_password
