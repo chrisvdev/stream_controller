@@ -30,8 +30,8 @@ class Bridge {
   private onInputChangedListeners: OnInputChangedListeners = {};
   constructor() {
     this.setSceneButton(8, 7, "Negro", getColor(0, 3, 0));
-    this.setSceneButton(8, 6, "Ya arrancamos", getColor(0, 3, 0));
-    this.setSceneButton(8, 5, "Ya arrancamos 2", getColor(0, 3, 0));
+    this.setSceneButton(8, 6, "Ya arrancamos 2", getColor(0, 3, 0));
+    this.setSceneButton(8, 5, "Ya arrancamos", getColor(0, 3, 0));
     this.setSceneButton(8, 4, "Solo camara", getColor(0, 0, 3));
     this.setSceneButton(8, 3, "Combo PC", getColor(0, 0, 3));
     this.setSceneButton(8, 2, "Solo PC", getColor(0, 0, 3));
@@ -133,8 +133,8 @@ class Bridge {
       return new StaticPixel(x, y, getColor(0, 3, 0));
     });
     btn?.setDefaultPixel();
-    if (await this.obs.call("GetStreamStatus"))
-      btn?.setPulsing(getColor(3, 0, 0));
+    const { outputActive } = await this.obs.call("GetStreamStatus");
+    if (outputActive) btn?.setPulsing(getColor(3, 0, 0));
     else btn?.setDefaultPixel();
     this.obs.on("StreamStateChanged", (event) => {
       const { outputActive } = event;
@@ -148,8 +148,8 @@ class Bridge {
       return new PulsingPixel(x, y, getColor(0, 3, 0));
     });
     btn?.setDefaultPixel();
-    if (await this.obs.call("GetStreamStatus"))
-      btn?.setStatic(getColor(3, 0, 0));
+    const { outputActive } = await this.obs.call("GetStreamStatus");
+    if (outputActive) btn?.setPulsing(getColor(3, 0, 0));
     else btn?.setDefaultPixel();
     btn?.onPressSuscribe(async () => {
       const { outputActive } = await this.obs.call("ToggleStream");
