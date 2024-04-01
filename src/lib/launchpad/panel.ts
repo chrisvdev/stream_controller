@@ -12,7 +12,7 @@ import {
   PalletCode,
   PalletPrimaryColor,
 } from "@launchpad/types.js";
-import type Button from "@launchpad/button.js";
+import Button from "@launchpad/button.js";
 import { makePanelButtons, getCoordinates } from "@launchpad/utils.js";
 export default class Panel {
   #launchpad;
@@ -88,6 +88,12 @@ export default class Panel {
     this.#framesToRender = [];
     this.#onPriorityRender = false;
     this.render();
+  }
+  resetButton(x: AxisCoordinate, y: AxisCoordinate) {
+    // @ts-ignore
+    this.#buttons[x][y] = new Button(x, y, this);
+    // @ts-ignore
+    this.#buttons[x][y]?.renderPixel();
   }
   #renderFrames() {
     if (!this.#onPriorityRender) return;

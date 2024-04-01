@@ -14,6 +14,9 @@ import {
   PalletPrimaryColor,
 } from "@launchpad/types.js";
 import type Panel from "@launchpad/panel.js";
+import Logger from "../log/logger.js";
+const moduleLogger = new Logger("Panel->Button");
+const { log, warn, error } = moduleLogger;
 
 export default class Button {
   #x;
@@ -23,13 +26,13 @@ export default class Button {
   #pixel: Pixel = new StaticPixel(0, 0, 0);
   #onPressCB: ButtonEventListener = (btn, panel) => {
     btn.setPulsing(getColor(3, 0, 0));
-    console.log(`Pressed not defined: ${this.#y + 1}${this.#x + 1}`);
+    log(`Pressed not defined: ${this.#y + 1}${this.#x + 1}`);
     setTimeout(() => {
       btn.setDefaultPixel();
     }, 2000);
   };
   #onLeaveCB: ButtonEventListener = (btn) => {
-    console.log(`Leaved not defined: ${this.#y + 1}${this.#x + 1}`);
+    log(`Leaved not defined: ${this.#y + 1}${this.#x + 1}`);
   };
   constructor(x: AxisCoordinate, y: AxisCoordinate, panel: Panel) {
     this.#x = x;

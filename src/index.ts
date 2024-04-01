@@ -1,3 +1,9 @@
-import Bridge from "@lib/bridge.js";
+import { LogLevel, setLoggerLevel } from "./lib/log/logger.js";
+import Panel from "./lib/launchpad/panel.js";
+import OBSBridge from "@obs/app_bridge.js";
 
-const bridge = new Bridge();
+setLoggerLevel(LogLevel.DEBUG);
+
+const panel = new Panel();
+
+const bridge = new OBSBridge(panel);
