@@ -9,8 +9,8 @@ import type {
 } from "@launchpad/types.js";
 import { sysexMessage } from "@launchpad/utils.js";
 
-const INPUT_NAME = "MIDIIN2 (LPMiniMK3 MIDI)";
-const OUTPUT_NAME = "MIDIOUT2 (LPMiniMK3 MIDI)";
+export const INPUT_NAME = "MIDIIN2 (LPMiniMK3 MIDI)";
+export const OUTPUT_NAME = "MIDIOUT2 (LPMiniMK3 MIDI)";
 
 export default class Launchpad {
   #input;

@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node --env-file=.env dist/index.js",
-    "watch": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\" \"node --watch --env-file=.env dist/index.js\")",
+    "dev": "tsc && (concurrently \"tsc -w\" \"tsc-alias -w\" \"node --watch --env-file=.env dist/index.js\")",
     "install_service": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && node --env-file=.env dist/install_service.js",
     "uninstall_service": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json && node --env-file=.env dist/uninstall_service.js",
     "test": "echo \"Error: no test specified\" && exit 1"

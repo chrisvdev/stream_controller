@@ -31,6 +31,8 @@ export default class WindowsService {
       description: "Core service for stream and more",
       script: `${rootPath}\\index.js`,
       env: env,
+      dependsOn: ["Audiosrv"],
+      wait: 5,
       //, workingDirectory: '...'
       //, allowServiceLogon: true
     });
