@@ -8,6 +8,9 @@ dependencies:
   easymidi:
     specifier: ^3.1.0
     version: 3.1.0
+  node-windows:
+    specifier: 1.0.0-beta.8
+    version: 1.0.0-beta.8
   obs-websocket-js:
     specifier: ^5.0.5
     version: 5.0.5
@@ -310,6 +313,13 @@ packages:
     resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: false
 
+  /node-windows@1.0.0-beta.8:
+    resolution: {integrity: sha512-uLekXnSeem3nW5escID224Fd0U/1VtvE796JpSpOY+c73Cslz/Qn2WUHRJyPQJEMrNGAy/FMRFjjhh4z1alZTA==}
+    dependencies:
+      xml: 1.0.1
+      yargs: 17.7.2
+    dev: false
+
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
@@ -464,6 +474,10 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+    dev: false
+
+  /xml@1.0.1:
+    resolution: {integrity: sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==}
     dev: false
 
   /y18n@5.0.8:

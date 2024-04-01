@@ -67,7 +67,7 @@ class OBSBridge {
       this.obs.call("SetCurrentProgramScene", { sceneName: scene });
     });
     this.onSceneChangedSuscribe((sceneName) => {
-      if (sceneName === scene) btn?.setPulsing(getColor(3, 0, 0));
+      if (sceneName === scene) btn?.setPulsing(getColor(3, 3, 3, true));
       else btn?.setDefaultPixel();
     });
   }
@@ -104,7 +104,7 @@ class OBSBridge {
       this.obs.call("ToggleInputMute", { inputName: input });
     });
     this.onInputChangedSuscribe(input, (state) => {
-      if (state) btn?.setFlashing(getColor(3, 0, 0), defaultColor);
+      if (state) btn?.setFlashing(getColor(1, 0, 0), defaultColor);
       else btn?.setDefaultPixel();
     });
   }

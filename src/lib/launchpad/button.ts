@@ -22,14 +22,14 @@ export default class Button {
   #x;
   #y;
   #panel;
-  #defaultPixelMaker: DefaultPixelMaker = (x, y) => new RGBPixel(x, y, 2, 2, 2);
+  #defaultPixelMaker: DefaultPixelMaker = (x, y) => new RGBPixel(x, y, 2, 0, 0);
   #pixel: Pixel = new StaticPixel(0, 0, 0);
   #onPressCB: ButtonEventListener = (btn, panel) => {
-    btn.setPulsing(getColor(3, 0, 0));
+    btn.setPulsing(getColor(1, 0, 0));
     log(`Pressed not defined: ${this.#y + 1}${this.#x + 1}`);
     setTimeout(() => {
       btn.setDefaultPixel();
-    }, 2000);
+    }, 1000);
   };
   #onLeaveCB: ButtonEventListener = (btn) => {
     log(`Leaved not defined: ${this.#y + 1}${this.#x + 1}`);
