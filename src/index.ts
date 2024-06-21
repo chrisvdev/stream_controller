@@ -6,7 +6,20 @@ import OBSBridge from "@obs/app_bridge.js";
 setLoggerLevel(LogLevel.NONE);
 
 function init(panel: Panel) {
-  const bridge = new OBSBridge(panel);
+  const oBSbridge = new OBSBridge(panel);
 }
+
+/* const toLoad: Promise<any>[] = [];
+
+toLoad.push(import("./lib/example/index.js"));
+
+Promise.all(toLoad).then((modules) => {
+  const [mod1] = modules;
+  const Example = mod1.default;
+  const ex1 = new Example();
+  const ex2 = new Example();
+  console.log(ex1.getId());
+  console.log(ex2.getId());
+});*/
 
 onPanelReady(init);
